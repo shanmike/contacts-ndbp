@@ -49,34 +49,34 @@ export default class App extends Component {
 
   render() {
     switch (this.state.display){
-        case 'addcontact': 
-          return (
-            <div>
-              <h1>ADDING CONTACT</h1>
-              <AddContact backHome={this.backHome} /> 
-            </div>
+      case 'addcontact': 
+        return (
+          <div>
+            <h1>ADDING CONTACT</h1>
+            <AddContact backHome={this.backHome} /> 
+          </div>
       )
 
-       case 'contactlist' : 
+      case 'contactlist' : 
         return (
           <div className="mainCont">
             <button className="addContactButton" onClick={()=>this.handleNewContact()}>+</button>
             {this.state.contacts.sort((e,i)=>e.name>i.name).map((val,i)=>{
               return(
                 <div className = 'tile' key={val.id}>
-                    <div className = "imageBox">
-                      <img 
-                        src ='http://cdn.cnn.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-full-169.jpg' 
-                        alt ="Contact"/>
-                    </div> 
-                    <ContactsTile  val={val} />
-                    <button className="button" onClick={()=>this.handleInfoId(i)}>Details</button>
+                  <div className = "imageBox">
+                    <img 
+                      src ='http://cdn.cnn.com/cnnnext/dam/assets/140926165711-john-sutter-profile-image-full-169.jpg' 
+                      alt ="Contact"/>
+                  </div> 
+                  <ContactsTile  val={val} />
+                  <button className="button" onClick={()=>this.handleInfoId(i)}>Details</button>
                 </div>)})}
           </div>
       )
 
       case 'contactinfo': 
-         return (
+        return (
           <div>
             <ContactPage backHome={this.backHome} state={this.state}/> 
           </div>

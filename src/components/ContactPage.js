@@ -29,26 +29,24 @@ export default class ContactPage extends Component{
             phone: this.state.phone,
             email: this.state.email
         }
-        axios.put(`/api/contacts/${this.props.state.contacts[this.props.state.infoId].id}`,body)
-            .then((contacts)=>{
+        axios.put(`/api/contacts/${this.props.state.contacts[this.props.state.infoId].id}`,body).then((contacts)=>{
                 this.props.backHome(contacts.data)
-            })
+        })
     }
 
     handleDelete(){
         axios.delete(`/api/contacts/${this.props.state.contacts[this.props.state.infoId].id}`).then((contacts)=>{
             this.props.backHome(contacts.data)
-        }
-      )
+        })
     }
 
     componentDidMount(){
         const {contacts, infoId} = this.props.state
-        this.setState({
-            name: contacts[infoId].name,
-            phone: contacts[infoId].phone,
-            email: contacts[infoId].email,
-    })
+            this.setState({
+                name: contacts[infoId].name,
+                phone: contacts[infoId].phone,
+                email: contacts[infoId].email,
+        })
     }
 
     render(){
@@ -70,7 +68,6 @@ export default class ContactPage extends Component{
                     <li><button className="delete" onClick={()=>this.handleDelete()}>Delete</button></li>
                     <li><button className="button" onClick={()=>this.props.backHome()}>Cancel</button></li>
                 </ul>
-
             </div>
         )
     }

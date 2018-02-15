@@ -8,5 +8,4 @@ function ContactsTile(props){
                 <div className='name'>{val.name}</div>
             </div>
         )
-    
 } export default ContactsTile

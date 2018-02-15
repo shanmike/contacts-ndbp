@@ -2,8 +2,6 @@ import React, { Component } from 'react';
 import axios from 'axios'
 import './contactsTile.css'
 
-
-
 export default class AddContact extends Component{
     constructor(props){
         super (props)
@@ -24,9 +22,8 @@ export default class AddContact extends Component{
 
     saveContact(){
         axios.post('/api/contacts',this.state).then((contacts)=>{
-            this.props.backHome(contacts.data)
-            }
-        )
+            this.props.backHome(contacts.data)    
+        })
     }
         
 

@@ -6,6 +6,12 @@ let contacts = [
         email: `adamjones@gmail.com`,
         id:0
     },
+    {
+        phone: 2105551234,
+        name: `David Brett`,
+        email: `davidbrett@gmail.com`,
+        id:0
+    }
 ];
 
 module.exports = {
